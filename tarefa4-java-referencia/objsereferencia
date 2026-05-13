@@ -1,1 +1,33 @@
+class Produto {
+    String nome;
+    double preco;
 
+    Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+}
+
+public class PassagemObjeto {
+
+    public static void aplicarDesconto(Produto p) {
+        System.out.println("\n Dentro do metodo aplicarDesconto() ");
+        System.out.println("Antes do desconto: " + p.nome + " - R$ " + p.preco);
+
+        p.preco = p.preco * 0.9; // desconto de 10%
+
+        System.out.println("Depois do desconto: " + p.nome + " - R$ " + p.preco);
+        System.out.println(" Fim do metodo \n");
+    }
+
+    public static void main(String[] args) {
+        Produto prod = new Produto("Cappuccino em capsulas", 27.00);
+
+        System.out.println("=== PROGRAMA PRINCIPAL (main) ===");
+        System.out.println("Antes da chamada: " + prod.nome + " - R$ " + prod.preco);
+
+        aplicarDesconto(prod);
+
+        System.out.println("Depois da chamada: " + prod.nome + " - R$ " + prod.preco);
+    }
+}
