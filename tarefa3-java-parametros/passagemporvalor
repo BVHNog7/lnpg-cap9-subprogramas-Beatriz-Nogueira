@@ -1,0 +1,23 @@
+public class PassagemPorValor {
+
+    public static void alterarNumero(int x) {
+        System.out.println("\n Dentro do metodo alterarNumero() ");
+        System.out.println("Valor recebido (antes): " + x);
+
+        x = x + 10; // alterando o valor local
+
+        System.out.println("Valor alterado (depois): " + x);
+        System.out.println(" Fim do metodo \n");
+    }
+
+    public static void main(String[] args) {
+        int numero = 5;
+
+        System.out.println(" PROGRAMA PRINCIPAL (main) ");
+        System.out.println("Valor da variavel antes da chamada: " + numero);
+
+        alterarNumero(numero);
+
+        System.out.println("Valor da variavel depois da chamada: " + numero);
+    }
+}
