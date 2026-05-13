@@ -1,1 +1,146 @@
+def mostrar_menu():
+    print("\n SISTEMA DE ESTOQUE ")
+    print("1 - Cadastrar produto")
+    print("2 - Adicionar ao estoque")
+    print("3 - Retirar do estoque")
+    print("4 - Consultar produto")
+    print("5 - Listar produtos")
+    print("6 - Remover produto")
+    print("0 - Sair")
 
+
+def ler_opcao():
+    return input("Selecione uma opção: ")
+
+
+def cadastrar_produto(estoque):
+    codigo_prod = input("Código do produto: ")
+
+    if codigo_prod in estoque:
+        print("O produto já está cadastrado!")
+        return
+
+    nome = input("Digite o nome do produto: ")
+    preco = float(input("Digite o preço do produto: "))
+    quantidade = int(input("Quantidade inicial: "))
+
+    estoque[codigo_prod] = {
+        "nome": nome,
+        "preco": preco,
+        "quantidade": quantidade
+    }
+
+    print("O produto foi cadastrado com sucesso!")
+
+
+def atualizar_qtd(estoque, codigo_prod, quantidade, tipo):
+    if codigo_prod not in estoque:
+        print("O produto não foi encontrado!")
+        return False
+
+    if tipo == "entrada":
+        estoque[codigo_prod]["quantidade"] += quantidade
+        return True
+
+    elif tipo == "saida":
+        if estoque[codigo_prod]["quantidade"] < quantidade:
+            print("Erro: estoque insuficiente!")
+            return False
+        estoque[codigo_prod]["quantidade"] -= quantidade
+        return True
+
+    return False
+
+
+def adicionar_estoque(estoque):
+    codigo_prod = input("Código do produto: ")
+    quantidade = int(input("Quantidade para adicionar: "))
+
+    if atualizar_qtd(estoque, codigo_prod, quantidade, "entrada"):
+        print("Adicionado com sucesso!")
+
+
+def retirar_estoque(estoque):
+    codigo_prod = input("Código do produto: ")
+    quantidade = int(input("Quantidade para retirar: "))
+
+    if atualizar_quantidade(estoque, codigo_prod, quantidade, "saida"):
+        print("Retirado com sucesso!")
+
+
+def consultar_produto(estoque):
+    codigo_prod = input("Código do produto: ")
+
+    if codigo_prod not in estoque:
+        print("Produto não encontrado nos estoques!")
+        return
+
+    produto = estoque[codigo_prod]
+    print("\n DADOS DO PRODUTO ")
+    print(f"Código: {codigo_prod}")
+    print(f"Nome: {produto['nome']}")
+    print(f"Preço: R$ {produto['preco']:.2f}")
+    print(f"Quantidade: {produto['quantidade']}")
+
+
+def calcular_valor_total(produto):
+    return produto["preco"] * produto["quantidade"]
+
+
+def listar_produtos(estoque):
+    if len(estoque) == 0:
+        print("Nenhum produto cadastrado ainda.")
+        return
+
+    print("\n LISTA DE PRODUTOS ")
+    for codigo_prod, produto in estoque.items():
+        total = calcular_valor_total(produto)
+        print(f"{codigo_prod} | {produto['nome']} | Qtd: {produto['quantidade']} | "
+              f"Preço: R$ {produto['preco']:.2f} | Total: R$ {total:.2f}")
+
+
+def remover_produto(estoque):
+    codigo_prod = input("Código do produto a remover: ")
+
+    if codigo_prod not in estoque:
+        print("Produto inexistente!")
+        return
+
+    del estoque[codigo_prod]
+    print("Produto removido com sucesso!")
+
+
+def main():
+    estoque = {}
+
+    while True:
+        mostrar_menu()
+        opcao = ler_opcao()
+
+        if opcao == "1":
+            cadastrar_produto(estoque)
+
+        elif opcao == "2":
+            adicionar_estoque(estoque)
+
+        elif opcao == "3":
+            retirar_estoque(estoque)
+
+        elif opcao == "4":
+            consultar_produto(estoque)
+
+        elif opcao == "5":
+            listar_produtos(estoque)
+
+        elif opcao == "6":
+            remover_produto(estoque)
+
+        elif opcao == "0":
+            print("Encerrando sistema...")
+            break
+
+        else:
+            print("Opção inválida!")
+
+
+main()
