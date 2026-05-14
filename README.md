@@ -7,17 +7,17 @@ turma: BSI-2026.1
 
 cd tarefa1-java
 
-javac Monolitico.java
+javac monolitico.java
 
-java Monolitico
+java monolitico
 
 Instruções de execução da versão modularizada:
 
 cd tarefa1-java
 
-javac Modularizado.java
+javac modularizado.java
 
-java Modularizado
+java modularizado
 
 
 2- Nessa questão, houve a implementação de um sistema de vendas em Python que tem a função de ler produtos, quantidades e preços unitários. Ele também é capaz de calcular o subtotal, aplicar descontos (5% acima de R$200 e 10% acima de R$500), calcular o total final e imprimir um cupom formatado. Agora comparando as duas versões do código, na versão monolítica, todo o processamento ficou em um único bloco, tornando o código extenso e mais difícil de ler. Quanto a versão modularizada, podemos destacar a criação de funções como o requisitado pela tarefa, o que teve o objetivo de tornar melhor a clareza do fluxo do programa e reduzir a repetição desnecessária. Além disso, a reutilização se tornou possível, pois funções como a de calcular desconto e de calcular o subtotal podem ser usadas em outros sistemas de vendas. A divisão também facilitou a manutenção, já que mudanças no cálculo do desconto ou na impressão do cupom podem ser feitas de mamneira individual, sem afetar muito o código principal. O tamanho dos blocos foi reduzido e a coesão aumentou, já que cada função passou a executar uma responsabilidade específica. Ainda comparando a versão monolítica e a modulalrizada, na versão monolítica, as partes que julguei mais repetitivas foram:
@@ -41,9 +41,9 @@ python modularizado.py
 
 cd tarefa3-java-parametros
 
-javac PassagemPorValor.java
+javac passagemporpalor.java
 
-java PassagemPorValor
+java passagemporvalor
 
 
 4- Um programa em Java foi desenvolvido com a classe Produto e o método aplicarDesconto(Produto p), que altera o preço do objeto e imprime os valores de antes e depois. O objetivo foi demonstrar que a linguagem Java não usa passagem por referência de verdade, mas sim passagem por valor, onde o valor que é copiado é a referência do objeto. O código é bem claro porque mostra o comportamento do objeto antes da chamada, dentro do método e após a execução, demonstrando que mesmo depois que o método termina, o objeto continua alterado, e o main ainda acessa esse mesmo objeto já modificado. Ao modularizar, ocorre a melhora na legibilidade, pois separa o comportamento do desconto em um método específico. Isso também facilita a manutenção, visto que a regra do desconto pode ser alterada apenas no trecho referente. O tamanho do método é razoável e a coesão é ok, já que aplicarDesconto() executa só uma tarefa. Dá pra reutilizar novamente o código em outras ocasiões semelhantes, já que o método pode ser aplicado a qualquer objeto que se refer a um produto em diferentes contextos. Instruções de execução:
