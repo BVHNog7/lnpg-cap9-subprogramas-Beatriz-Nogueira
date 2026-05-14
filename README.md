@@ -50,15 +50,15 @@ java passagemporvalor
 
 cd tarefa4-java-referencia
 
-javac PassagemObjeto.java
+javac objsereferencia.java
 
-java PassagemObjeto
+java objsereferencia
 
 5- Na ultima tarefa, cujo a escolha do sistema era livre, escolhi fazer um sistema de estoque em Python com as seguintes funcionalidades: cadastrar produtos, registrar adição e retirada das quantidades de cada produto, consultar itens, listar produtos e remover os registros do sistema. O código já foi desenvolvido de forma modularizada, especialmente para facilitar sua organização, leitura e eficiência com que se pode alterar pequenos trechos, contando com várias funções responsáveis por tarefas específicas, e garantindo a separação clara de responsabilidades. Isso tudo se deve ao fato de qhe o main() apenas organiza o menu e chama as funções adequadas. Usar novamente certas funções do código pode ser considerada uma possibilidade, principalmente a função atualizar_quantidade(), que foi criada por conta da principal dificuldade encontrada no código, sendo essa a de organizar as operações de entrada e saída sem repetir demais. Além disso, o tamanho dos métodos permaneceu pequeno e controlado, como o desejado. Instruções de execução:
 
 cd tarefa5-livre
 
-python estoque.py
+python subprogramas.py
 
 Segue o diagrama do código:
 
