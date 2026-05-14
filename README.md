@@ -12,14 +12,5 @@ descrição breve de cada tarefa:
 
 4- Um programa em Java foi desenvolvido com a classe Produto e o método aplicarDesconto(Produto p), que altera o preço do objeto e imprime os valores de antes e depois. O objetivo foi demonstrar que a linguagem Java não usa passagem por referência de verdade, mas sim passagem por valor, onde o valor que é copiado é a referência do objeto. O código é bem claro porque mostra o comportamento do objeto antes da chamada, dentro do método e após a execução. Ao modularizar, ocorre a melhora na legibilidade, pois separa o comportamento do desconto em um método específico. Isso também facilita a manutenção, visto que a regra do desconto pode ser alterada apenas no trecho referente. O tamanho do método é razoável e a coesão é ok, já que aplicarDesconto() executa só uma tarefa. Dá pra reutilizar novamente o código em outras ocasiões semelhantes, já que o método pode ser aplicado a qualquer objeto que se refer a um produto em diferentes contextos.
 
-instruções de execução:
+5- Na ultima tarefa, cujo a escolha do sistema era livre, escolhi fazer um sistema de estoque em Python com as seguintes funcionalidades: cadastrar produtos, registrar adição e retirada das quantidades de cada produto, consultar itens, listar produtos e remover os registros do sistema. O código já foi desenvolvido de forma modularizada, especialmente para facilitar sua organização, leitura e eficiência com que se pode alterar pequenos trechos, contando com várias funções responsáveis por tarefas específicas, e garantindo a separação clara de responsabilidades. Isso tudo se deve ao fato de qhe o main() apenas organiza o menu e chama as funções adequadas. Usar novamente certas funções do código pode ser considerada uma possibilidade, principalmente a função atualizar_quantidade(), utilizada tanto para adicionar quanto para a saída de estoque, evitando repetição de código. Além disso, o tamanho dos métodos permaneceu pequeno e controlado, como o desejado.
 
-comparação entre versão monolítica e versão modularizada:
-
-Os alunos devem comentar:
-legibilidade;
-reutilização;
-facilidade de manutenção;
-clareza do fluxo;
-tamanho dos métodos;
-coesão.
