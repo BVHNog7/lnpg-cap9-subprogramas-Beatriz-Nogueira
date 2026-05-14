@@ -8,6 +8,10 @@ descrição breve de cada tarefa:
 
 2- Nessa questão, houve a implementação de um sistema de vendas em Python que tem a função de ler produtos, quantidades e preços unitários. Ele também é capaz de calcular o subtotal, aplicar descontos (5% acima de R$200 e 10% acima de R$500), calcular o total final e imprimir um cupom formatado. Agora comparando as duas versões do código, na versão monolítica, todo o processamento ficou em um único bloco, tornando o código extenso e mais difícil de ler. Quanto a versão modularizada, podemos destacar a criação de funções como o requisitado pela tarefa, o que teve o objetivo de tornar melhor a clareza do fluxo do programa e reduzir a repetição desnecessária. Além disso, a reutilização se tornou possível, pois funções como a de calcular desconto e de calcular o subtotal podem ser usadas em outros sistemas de vendas. A divisão também facilitou a manutenção, já que mudanças no cálculo do desconto ou na impressão do cupom podem ser feitas de mamneira individual, sem afetar muito o código principal. O tamanho dos blocos foi reduzido e a coesão aumentou, já que cada função passou a executar uma responsabilidade específica.
 
+3- Nesta tarefa foi criado um programa Java para demonstrar passagem de parâmetros por valor utilizando um tipo primitivo (int). O método alterarNumero(int x) foi usado pata alterar o valor local da variável e imprimir o valor antes e depois da alteração, enquanto o main mostrou que a variável original não foi modificada após a chamada. O programa aparenta ser bem claro em relação ao fluxo, pois o objetivo é simples e direto. A legibilidade é alta, já que o método possui poucas linhas e o comportamento é demonstrado sem muita redundância. Pelo tamanho do método ser pequeno, eu diria que a coesão é alta, pois a função existe exclusivamente para demonstrar a passagem por valor. Além disso, o programa facilita manutenção e reutilização como exemplo para explicar comportamento de parâmetros em Java.
+
+4- 
+
 instruções de execução:
 
 comparação entre versão monolítica e versão modularizada:
